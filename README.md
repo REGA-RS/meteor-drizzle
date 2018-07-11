@@ -1,9 +1,9 @@
-- [Getting started](#heading)
-  * [Drizzle](#sub-heading)
-    + [Installation](#sub-sub-heading)
-    + [Run](#sub-sub-heading-1)
-  * [Meteor](#sub-heading-1)
-    + [Run](#sub-sub-heading-3)
+- [Getting started](#getting-started)
+  * [Drizzle](#drizzle)
+    + [Installation](#installation)
+    + [Run](#run)
+  * [Meteor](#meteor)
+    + [Run](#run-1)
 
 # Meteor-Drizzle
 Drizzle DAPP with Meteor backend. More information [here](https://medium.com/coinmonks/drizzle-dapp-with-meteor-backend-b16ff0a8dd11).
