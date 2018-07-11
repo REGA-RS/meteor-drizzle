@@ -7,6 +7,9 @@ let listener = null;
 function setListener(cb) {
     listener = cb;
 }
+function getLastObjectItem(Obj){
+  return Obj[Object.keys(Obj)[Object.keys(Obj).length-1]];
+}
 
 if (Meteor.isServer) {
     // This code only runs on the server
@@ -17,11 +20,12 @@ if (Meteor.isServer) {
     }
 
     const sc = new web3.eth.Contract(SimpleStorageArtifact.abi);
-    sc.options.address = SimpleStorageArtifact.networks[5777].address;
+    let simpleStorageNetworks = JSON.parse(JSON.stringify(SimpleStorageArtifact.networks));
+    sc.options.address = getLastObjectItem(simpleStorageNetworks).address;
 
     sc.events.StorageSet({fromBlock:0}, (error, event) => { if(error) console.error(event) })
       .on('data', function(event) {
-        sc.methods.storedData().call().then(result => { 
+        sc.methods.storedData().call().then(result => {
           if(listener) {
             listener(result)
           }
