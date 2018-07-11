@@ -63,6 +63,7 @@ cd backend
 
 #### Run
 ```bash
+npm install
 // Serves the back-end on http://localhost:9000
-meteor run --port 9000
+npm start
 ```
