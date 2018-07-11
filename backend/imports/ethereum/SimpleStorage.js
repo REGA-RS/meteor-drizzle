@@ -2,7 +2,7 @@ import Web3 from 'web3';
 import contract from 'truffle-contract';
 import { Tracker } from 'meteor/tracker'
 
-import SimpleStorageArtifact from '../ethereum/build/contracts/SimpleStorage.json'
+import SimpleStorageArtifact from './build/contracts/SimpleStorage.json'
 
 const contractDep = new Tracker.Dependency;
 
@@ -20,7 +20,7 @@ class SimpleStorage {
             this.web3Provider = new Web3.providers.HttpProvider('http://localhost:8545');
         }
         web3 = new Web3(this.web3Provider);
-     
+
         this.contract = contract(SimpleStorageArtifact);
         this.contract.setProvider(web3.currentProvider);
 
@@ -30,14 +30,14 @@ class SimpleStorage {
             console.log('SimpleStorage: instance is ready')
             that._setInstance(instance)
             that._refreshData()
-            instance.StorageSet().watch((err, responce) => { 
-                if(err) { 
-                    console.error(err) 
-                } 
+            instance.StorageSet().watch((err, responce) => {
+                if(err) {
+                    console.error(err)
+                }
                 else {
                     that._refreshData()
                     console.log(responce.args._message)
-                } 
+                }
             });
         });
     }
@@ -65,7 +65,7 @@ class SimpleStorage {
         const that = this;
 
         if(this.instance === undefined) return;
-    
+
         this.instance.storedData.call()
             .then(result => that._setData(result))
             .catch(error => concole.error(error));

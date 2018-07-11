@@ -2,7 +2,7 @@
   "name": "backend",
   "private": true,
   "scripts": {
-    "install": "cpx ../dapp/build/contracts/SimpleStorage.json imports/ethereum/build/contracts && cpx ../dapp/build/contracts/Migrations.json imports/ethereum/build/contracts",
+    "install": "cpx ../dapp/build/contracts/SimpleStorage.json imports/ethereum/build/contracts",
     "start": "meteor run --port 9000",
     "test": "meteor test --once --driver-package meteortesting:mocha",
     "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
