@@ -1,12 +1,15 @@
-+ [Meteor-Drizzle](#heading)
-  + [Getting started](#sub-heading)
-    + [Drizzle](#sub-sub-heading)
-      + [Installation](#sub-sub-sub-heading)
-      + [Run](#sub-sub-sub-heading-1)
-    + [Meteor](#sub-sub-heading-1)
-      + [Run](#sub-sub-sub-heading-2)
+- [Getting started](#heading)
+  * [Drizzle](#sub-heading)
+    + [Installation](#sub-sub-heading)
+    + [Run](#sub-sub-heading-1)
+  * [Meteor](#sub-heading-1)
+    + [Run](#sub-sub-heading-3)
 
 # Meteor-Drizzle
+Drizzle DAPP with Meteor backend. More information [here](https://medium.com/coinmonks/drizzle-dapp-with-meteor-backend-b16ff0a8dd11).
+
+<!-- toc -->
+
 ## Getting Started
 ### Drizzle
 Trough command line enter dapp folder
