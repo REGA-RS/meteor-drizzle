@@ -2,7 +2,8 @@
   "name": "backend",
   "private": true,
   "scripts": {
-    "start": "meteor run",
+    "install": "cpx ../dapp/build/contracts/SimpleStorage.json imports/ethereum/build/contracts",
+    "start": "meteor run --port 9000",
     "test": "meteor test --once --driver-package meteortesting:mocha",
     "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
     "visualize": "meteor --production --extra-packages bundle-visualizer"
@@ -12,6 +13,7 @@
     "bcrypt": "^2.0.1",
     "bn.js": "^4.11.8",
     "classnames": "^2.2.6",
+    "cpx": "^1.5.0",
     "meteor-node-stubs": "^0.4.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",

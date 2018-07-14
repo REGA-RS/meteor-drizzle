@@ -50,7 +50,7 @@ class Home extends Component {
             <p>Logged user: {this.props.user.username}</p>
             <button onClick={this.handleLogout}>Logout</button>
           </div>
-        
+
           <h3>Todos</h3>
           <div>
             <input
@@ -97,16 +97,37 @@ class Home extends Component {
             <img src={logo} alt="drizzle-logo" />
             <h1>Drizzle Examples</h1>
             <p>Examples of how to get started with Drizzle in various situations.</p>
-            
+
             {this.renderTasks()}
             <br/><br/>
           </div>
-        
+
           <div className="pure-u-1-1">
             <h2>Active Account</h2>
             <AccountData accountIndex="0" units="ether" precision="3" />
 
             <br/><br/>
+          </div>
+
+          <div className="pure-u-1-1">
+          <h3>Todos</h3>
+          <div>
+            <input
+              type="text"
+              placeholder="Add todo item ..."
+              onKeyPress={this.handleAddTodo}
+            />
+          </div>
+          <ul>
+            {this.props.todos.map((t, i) =>
+                <li key={i}>
+      <span className="text">
+        <strong>{t.data !== undefined ? t.data :'n/a'}</strong>:
+        {t.text}
+      </span>
+                </li>
+            )}
+          </ul>
           </div>
 
           <div className="pure-u-1-1">
